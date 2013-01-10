@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.btd.demo"
+    android:versionCode="1"
+    android:versionName="1.0" > 
+ 
+    <!-- We want to grant our app access to some powerful features of the phone -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" /> 
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="com.android.future.usb.accessory" />
+        <activity
+            android:name="com.btd.demo.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+	<action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
+           <meta-data android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+	android:resource="@xml/accessory_filter" /> 
+        </activity>
+          
+        <activity
+            android:name="com.btd.demo.MySecondActivity">
+            <!--   android:label="@string/title_activity_my_second"> -->
+        </activity>
+        
+        <activity
+            android:name="com.btd.demo.TwitterWebActivity"
+            android:label="Twitter Authentification" >
+        </activity>
+        <service android:name=".ArduinoService"/>    
+    </application>
+</manifest>
