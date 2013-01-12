@@ -58,13 +58,14 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 	  	public long msg; // 
 			@Override
 			public void run() {
+				/**
 				if (msg==1) { 
 					Bundle b = new Bundle();
 					b.putFloat("sensor", sensorReading);
 		    	    Intent myIntent = new Intent(getApplicationContext(), MySecondActivity.class);
 		    	    myIntent.putExtras(b);
 			    	startActivity(myIntent);
-				}
+				}**/
 			}
 	  	 
 	  }  
@@ -152,6 +153,7 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
+		/**
 		case R.id.buttonSensor:
 			// Bundle is a mapping from String values to various Parcelable types. 
 			Bundle b = new Bundle();
@@ -160,7 +162,7 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
     	    myIntent.putExtras(b);
 	    	startActivity(myIntent);
 			break;
-			
+			**/
 		case R.id.buttonLight:
 			arduinoBinder.sendMessageToArduino();
 			break;
