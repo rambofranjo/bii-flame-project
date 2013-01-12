@@ -102,12 +102,7 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 		mSensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
 		mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 		
-		// we can access our button object from activity_main.xml by adding this line of code:
-		buttonRead = (Button) findViewById (R.id.buttonSensor);
-		buttonRead.setOnClickListener(this);
 		
-		buttonLight = (Button) findViewById(R.id.buttonLight);
-		buttonLight.setOnClickListener(this);
 		buttonLight.setVisibility(View.VISIBLE);
 		IntentFilter filter = new IntentFilter("com.google.android.BeyondTheDesktop.action.USB_PERMISSION");
 		filter.addAction(UsbManager.ACTION_USB_ACCESSORY_DETACHED);
@@ -163,9 +158,6 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 	    	startActivity(myIntent);
 			break;
 			**/
-		case R.id.buttonLight:
-			arduinoBinder.sendMessageToArduino();
-			break;
 		}
 	}
 	
