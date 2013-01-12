@@ -25,6 +25,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import com.facebook.*;
+import com.facebook.model.*;
 
 public class MainActivity extends Activity implements SensorEventListener, OnClickListener{
 	
