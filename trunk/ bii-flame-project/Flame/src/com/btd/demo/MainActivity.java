@@ -45,7 +45,8 @@ public class MainActivity extends FragmentActivity implements SensorEventListene
 	
 	private SensorManager mSensorManager;
 	private Sensor mLight; 
-	private float sensorReading = 0;
+	
+	//private float sensorReading = 0;
 
 	UsbAccessory mAccessory;
 	ParcelFileDescriptor mFileDescriptor;
@@ -233,10 +234,12 @@ public class MainActivity extends FragmentActivity implements SensorEventListene
 
 	@Override
 	public void onSensorChanged(SensorEvent event) {
+		/*
 		if(event.sensor.getType()==Sensor.TYPE_LIGHT) {
 			sensorReading = event.values[0];
 			Log.d("MainActivity","Sensor Reading: "+event.values[0]);
 		}
+		*/
 	}
 
 	@Override
