@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,7 +29,7 @@ import android.widget.Button;
 import com.facebook.*;
 import com.facebook.model.*;
 
-public class MainActivity extends Activity implements SensorEventListener, OnClickListener{
+public class MainActivity extends FragmentActivity implements SensorEventListener, OnClickListener{
 	
 	private SensorManager mSensorManager;
 	private Sensor mLight;
@@ -97,18 +98,11 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// here you set the layout resource that is defining the UI of the MainActivity
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.main);
 		
 		mSensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
 		mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 		
-		// we can access our button object from activity_main.xml by adding this line of code:
-		buttonRead = (Button) findViewById (R.id.buttonSensor);
-		buttonRead.setOnClickListener(this);
-		
-		buttonLight = (Button) findViewById(R.id.buttonLight);
-		buttonLight.setOnClickListener(this);
-		buttonLight.setVisibility(View.VISIBLE);
 		IntentFilter filter = new IntentFilter("com.google.android.BeyondTheDesktop.action.USB_PERMISSION");
 		filter.addAction(UsbManager.ACTION_USB_ACCESSORY_DETACHED);
 		registerReceiver(mUsbReceiver, filter);	
@@ -163,9 +157,6 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 	    	startActivity(myIntent);
 			break;
 			**/
-		case R.id.buttonLight:
-			arduinoBinder.sendMessageToArduino();
-			break;
 		}
 	}
 	
