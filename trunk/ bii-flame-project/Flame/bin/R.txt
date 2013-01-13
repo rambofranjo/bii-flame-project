@@ -116,7 +116,8 @@ int layout com_facebook_picker_title_bar_stub 0x7f03000a
 int layout com_facebook_placepickerfragment 0x7f03000b
 int layout com_facebook_placepickerfragment_list_row 0x7f03000c
 int layout com_facebook_usersettingsfragment 0x7f03000d
-int layout splash 0x7f03000e
+int layout selection 0x7f03000e
+int layout splash 0x7f03000f
 int menu activity_main 0x7f0a0000
 int string app_id 0x7f06001c
 int string app_name 0x7f060019
