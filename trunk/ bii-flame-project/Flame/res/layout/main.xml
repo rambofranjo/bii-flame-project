@@ -22,7 +22,7 @@
         android:layout_height="fill_parent">
 
     <fragment android:name="com.btd.demo.SelectionFragment"
-              android:id="@+id/selectionFragment"
+              android:id="@+id/selectionFragment" 
               android:layout_width="match_parent"
               android:layout_height="match_parent" />
     <fragment android:name="com.btd.demo.SplashFragment"
